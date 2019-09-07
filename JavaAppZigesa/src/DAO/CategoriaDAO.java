@@ -20,7 +20,7 @@ public class CategoriaDAO{
             rs = ps.executeQuery();
             while(rs.next()){
                 CategoriaVO vo = new CategoriaVO();
-                vo.setIdcategoria(rs.getInt(1));
+                vo.setIdcategoria(rs.getLong(1));
                 vo.setMontoacobrar(rs.getDouble(2));
                 list.add(vo);
             }
@@ -46,7 +46,7 @@ public class CategoriaDAO{
         PreparedStatement ps = null;
         try{
             ps = conec.getConnection().prepareStatement(sql);
-            ps.setInt(1, vo.getIdcategoria());
+            ps.setLong(1, vo.getIdcategoria());
             ps.setDouble(2, vo.getMontoacobrar());
             ps.executeUpdate();
         }catch(SQLException ex){
@@ -69,7 +69,7 @@ public class CategoriaDAO{
         PreparedStatement ps = null;
         try{
             ps = conec.getConnection().prepareStatement(sql);
-            ps.setInt(1, vo.getIdcategoria());
+            ps.setLong(1, vo.getIdcategoria());
             ps.setDouble(2, vo.getMontoacobrar());
             ps.executeUpdate();
         }catch(SQLException ex){
@@ -92,7 +92,7 @@ public class CategoriaDAO{
         PreparedStatement ps = null;
         try{
             ps = conec.getConnection().prepareStatement(sql);
-            ps.setInt(1, vo.getIdcategoria());
+            ps.setLong(1, vo.getIdcategoria());
             ps.setDouble(2, vo.getMontoacobrar());
             ps.executeUpdate();
         }catch(SQLException ex){

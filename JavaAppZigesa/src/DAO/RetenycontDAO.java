@@ -12,7 +12,7 @@ public class RetenycontDAO{
     public ArrayList<RetenycontVO> Listar_RetenycontVO(){
         ArrayList<RetenycontVO> list = new ArrayList<RetenycontVO>();
         Conectar conec = new Conectar();
-        String sql = "SELECT * FROM tabla;";
+        String sql = "SELECT * FROM retenycont;";
         ResultSet rs = null;
         PreparedStatement ps = null;
         try{
@@ -20,7 +20,7 @@ public class RetenycontDAO{
             rs = ps.executeQuery();
             while(rs.next()){
                 RetenycontVO vo = new RetenycontVO();
-                vo.setIdretcon(rs.getInt(1));
+                vo.setIdretcon(rs.getLong(1));
                 vo.setPorcapjub(rs.getInt(2));
                 vo.setPorcobsoc(rs.getInt(3));
                 vo.setPorsind(rs.getInt(4));
@@ -47,11 +47,11 @@ public class RetenycontDAO{
 /*Metodo agregar*/
     public void Agregar_RetenycontVO(RetenycontVO vo){
         Conectar conec = new Conectar();
-        String sql = "INSERT INTO tabla (campo1, campo2) VALUES(?,?);";
+        String sql = "INSERT INTO retenycont (campo1, campo2) VALUES(?,?);";
         PreparedStatement ps = null;
         try{
             ps = conec.getConnection().prepareStatement(sql);
-            ps.setInt(1, vo.getIdretcon());
+            ps.setLong(1, vo.getIdretcon());
             ps.setDouble(2, vo.getPorcapjub());
             ps.setDouble(3, vo.getPorcobsoc());
             ps.setDouble(4, vo.getPorsind());
@@ -75,11 +75,11 @@ public class RetenycontDAO{
 /*Metodo Modificar*/
     public void Modificar_RetenycontVO(RetenycontVO vo){
         Conectar conec = new Conectar();
-        String sql = "UPDATE tabla SET campo2 = ? WHERE campo1 = ?;";
+        String sql = "UPDATE retenycont SET campo2 = ? WHERE campo1 = ?;";
         PreparedStatement ps = null;
         try{
             ps = conec.getConnection().prepareStatement(sql);
-            ps.setInt(1, vo.getIdretcon());
+            ps.setLong(1, vo.getIdretcon());
             ps.setDouble(2, vo.getPorcapjub());
             ps.setDouble(3, vo.getPorcobsoc());
             ps.setDouble(4, vo.getPorsind());
@@ -103,11 +103,11 @@ public class RetenycontDAO{
 /*Metodo Eliminar*/
     public void Eliminar_RetenycontVO(RetenycontVO vo){
         Conectar conec = new Conectar();
-        String sql = "DELETE FROM tabla WHERE campo1 = ?;";
+        String sql = "DELETE FROM retenycont WHERE campo1 = ?;";
         PreparedStatement ps = null;
         try{
             ps = conec.getConnection().prepareStatement(sql);
-            ps.setDouble(1, vo.getIdretcon());
+            ps.setLong(1, vo.getIdretcon());
             ps.setDouble(2, vo.getPorcapjub());
             ps.setDouble(3, vo.getPorcobsoc());
             ps.setDouble(4, vo.getPorsind());

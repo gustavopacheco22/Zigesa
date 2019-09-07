@@ -14,6 +14,7 @@ public class Conectar{
         try{
         Class.forName("com.mysql.jdbc.Driver");
         connection = DriverManager.getConnection(url,login,password);
+        connection.setAutoCommit(false);
         if (connection!=null){
             System.out.println("Conexi�n a base de datos "+bd+" OK\n");
         }

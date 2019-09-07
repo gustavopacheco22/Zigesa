@@ -12,7 +12,7 @@ public class ContratoDAO{
     public ArrayList<ContratoVO> Listar_ContratoVO(){
         ArrayList<ContratoVO> list = new ArrayList<ContratoVO>();
         Conectar conec = new Conectar();
-        String sql = "SELECT * FROM tabla;";
+        String sql = "SELECT * FROM contrato;";
         ResultSet rs = null;
         PreparedStatement ps = null;
         try{
@@ -20,14 +20,14 @@ public class ContratoDAO{
             rs = ps.executeQuery();
             while(rs.next()){
                 ContratoVO vo = new ContratoVO();
-                vo.setIdcontrato(rs.getInt(1));
+                vo.setIdcontrato(rs.getLong(1));
                 vo.setFechafirma(rs.getDate(2));
                 vo.setFechavencimiento(rs.getDate(3));
                 vo.setCategoria(rs.getString(4));
                 vo.setMontoxcategoria(rs.getDouble(5));
-                vo.setDni(rs.getInt(6));
-                vo.setIdempleado(rs.getInt(7));
-                vo.setIdcategoria(rs.getInt(8));
+                vo.setDni(rs.getLong(6));
+                vo.setIdempleado(rs.getLong(7));
+                vo.setIdcategoria(rs.getLong(8));
                 list.add(vo);
             }
         }catch(SQLException ex){
@@ -52,14 +52,14 @@ public class ContratoDAO{
         PreparedStatement ps = null;
         try{
             ps = conec.getConnection().prepareStatement(sql);
-            ps.setInt(1, vo.getIdcontrato());
+            ps.setLong(1, vo.getIdcontrato());
             ps.setObject(2, vo.getFechafirma());
             ps.setObject(3, vo.getFechavencimiento());
             ps.setString(4, vo.getCategoria());
             ps.setDouble(5, vo.getMontoxcategoria());
-            ps.setInt(6, vo.getDni());
-            ps.setInt(7, vo.getIdempleado());
-            ps.setInt(8, vo.getIdcategoria());
+            ps.setLong(6, vo.getDni());
+            ps.setLong(7, vo.getIdempleado());
+            ps.setLong(8, vo.getIdcategoria());
             ps.executeUpdate();
         }catch(SQLException ex){
             System.out.println(ex.getMessage());
@@ -81,14 +81,14 @@ public class ContratoDAO{
         PreparedStatement ps = null;
         try{
             ps = conec.getConnection().prepareStatement(sql);
-            ps.setInt(1, vo.getIdcontrato());
+            ps.setLong(1, vo.getIdcontrato());
             ps.setObject(2, vo.getFechafirma());
             ps.setObject(3, vo.getFechavencimiento());
             ps.setString(4, vo.getCategoria());
             ps.setDouble(5, vo.getMontoxcategoria());
-            ps.setInt(6, vo.getDni());
-            ps.setInt(7, vo.getIdempleado());
-            ps.setInt(8, vo.getIdcategoria());
+            ps.setLong(6, vo.getDni());
+            ps.setLong(7, vo.getIdempleado());
+            ps.setLong(8, vo.getIdcategoria());
             ps.executeUpdate();
         }catch(SQLException ex){
             System.out.println(ex.getMessage());
@@ -110,14 +110,14 @@ public class ContratoDAO{
         PreparedStatement ps = null;
         try{
             ps = conec.getConnection().prepareStatement(sql);
-            ps.setInt(1, vo.getIdcontrato());
+            ps.setLong(1, vo.getIdcontrato());
             ps.setObject(2, vo.getFechafirma());
             ps.setObject(3, vo.getFechavencimiento());
             ps.setString(4, vo.getCategoria());
             ps.setDouble(5, vo.getMontoxcategoria());
-            ps.setInt(6, vo.getDni());
-            ps.setInt(7, vo.getIdempleado());
-            ps.setInt(8, vo.getIdcategoria());
+            ps.setLong(6, vo.getDni());
+            ps.setLong(7, vo.getIdempleado());
+            ps.setLong(8, vo.getIdcategoria());
             ps.executeUpdate();
         }catch(SQLException ex){
             System.out.println(ex.getMessage());

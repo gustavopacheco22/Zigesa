@@ -5,19 +5,30 @@ import java.sql.Date;
 public class ContratoVO {
 
 /*Todo los atributos*/
-    int idcontrato;
-    Date fechafirma;
-    Date fechavencimiento;
-    String categoria;
-    double montoxcategoria;
-    int dni;
-    int idempleado;
-    int idcategoria;
+    private Long idcontrato;
+    private Date fechafirma;
+    private Date fechavencimiento;
+    private String categoria;
+    private double montoxcategoria;
+    private Long dni;
+    private Long idempleado;
+    private Long idcategoria;
 
-public ContratoVO(){}
+    public ContratoVO(){}
 
-/*Todo los codigos get*/
-    public int getIdcontrato(){
+    public ContratoVO(Long idcontrato, Date fechafirma, Date fechavencimiento, String categoria, double montoxcategoria, Long dni, Long idempleado, Long idcategoria) {
+        this.idcontrato = idcontrato;
+        this.fechafirma = fechafirma;
+        this.fechavencimiento = fechavencimiento;
+        this.categoria = categoria;
+        this.montoxcategoria = montoxcategoria;
+        this.dni = dni;
+        this.idempleado = idempleado;
+        this.idcategoria = idcategoria;
+    }
+
+    /*Todo los codigos get*/
+    public Long getIdcontrato(){
         return idcontrato;
     }
     public Object getFechafirma(){
@@ -32,19 +43,19 @@ public ContratoVO(){}
     public double getMontoxcategoria(){
         return montoxcategoria;
     }
-    public int getDni(){
+    public Long getDni(){
         return dni;
     }
-    public int getIdempleado(){
+    public Long getIdempleado(){
         return idempleado;
     }
-    public int getIdcategoria(){
+    public Long getIdcategoria(){
         return idcategoria;
     }
 
 
 /*Todo los codigos set*/
-    public void setIdcontrato(int idcontrato){
+    public void setIdcontrato(Long idcontrato){
         this.idcontrato = idcontrato;
     }
     public void setFechafirma(Date fechafirma){
@@ -59,14 +70,18 @@ public ContratoVO(){}
     public void setMontoxcategoria(double montoxcategoria){
         this.montoxcategoria = montoxcategoria;
     }
-    public void setDni(int dni){
+    public void setDni(Long dni){
         this.dni = dni;
     }
-    public void setIdempleado(int idempleado){
+    public void setIdempleado(Long idempleado){
         this.idempleado = idempleado;
     }
-    public void setIdcategoria(int idcategoria){
+    public void setIdcategoria(Long idcategoria){
         this.idcategoria = idcategoria;
     }
 
+    @Override
+    public String toString() {
+        return "ContratoVO{" + "idcontrato=" + idcontrato + ", fechafirma=" + fechafirma + ", fechavencimiento=" + fechavencimiento + ", categoria=" + categoria + ", montoxcategoria=" + montoxcategoria + ", dni=" + dni + ", idempleado=" + idempleado + ", idcategoria=" + idcategoria + '}';
+    }
 }

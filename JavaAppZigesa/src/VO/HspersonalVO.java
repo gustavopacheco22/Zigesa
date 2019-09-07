@@ -3,21 +3,35 @@ package VO;
 public class HspersonalVO {
 
 /*Todo los atributos*/
-    int idmovimientofilial;
-    int dia;
-    int mes;
-    int anio;
-    int idfilial;
-    int horastrabajadas;
-    int horasextras;
-    String comentarios;
-    int dni;
-    int idempleado;
+    private Long idmovimientofilial;
+    private int dia;
+    private int mes;
+    private int anio;
+    private long idfilial;
+    private int horastrabajadas;
+    private int horasextras;
+    private String comentarios;
+    private long dni;
+    private long idempleado;
 
 public HspersonalVO(){}
 
+    public HspersonalVO(Long idmovimientofilial, int dia, int mes, int anio, long idfilial, int horastrabajadas, int horasextras, String comentarios, long dni, long idempleado) {
+        this.idmovimientofilial = idmovimientofilial;
+        this.dia = dia;
+        this.mes = mes;
+        this.anio = anio;
+        this.idfilial = idfilial;
+        this.horastrabajadas = horastrabajadas;
+        this.horasextras = horasextras;
+        this.comentarios = comentarios;
+        this.dni = dni;
+        this.idempleado = idempleado;
+    }
+
+
 /*Todo los codigos get*/
-    public int getIdmovimientofilial(){
+    public Long getIdmovimientofilial(){
         return idmovimientofilial;
     }
     public int getDia(){
@@ -29,7 +43,7 @@ public HspersonalVO(){}
     public int getAnio(){
         return anio;
     }
-    public int getIdfilial(){
+    public long getIdfilial(){
         return idfilial;
     }
     public int getHorastrabajadas(){
@@ -41,16 +55,16 @@ public HspersonalVO(){}
     public String getComentarios(){
         return comentarios;
     }
-    public int getDni(){
+    public long getDni(){
         return dni;
     }
-    public int getIdempleado(){
+    public long getIdempleado(){
         return idempleado;
     }
 
 
 /*Todo los codigos set*/
-    public void setIdmovimientofilial(int idmovimientofilial){
+    public void setIdmovimientofilial(Long idmovimientofilial){
         this.idmovimientofilial = idmovimientofilial;
     }
     public void setDia(int dia){
@@ -62,7 +76,7 @@ public HspersonalVO(){}
     public void setAnio(int anio){
         this.anio = anio;
     }
-    public void setIdfilial(int idfilial){
+    public void setIdfilial(long idfilial){
         this.idfilial = idfilial;
     }
     public void setHorastrabajadas(int horastrabajadas){
@@ -74,11 +88,15 @@ public HspersonalVO(){}
     public void setComentarios(String comentarios){
         this.comentarios = comentarios;
     }
-    public void setDni(int dni){
+    public void setDni(long dni){
         this.dni = dni;
     }
-    public void setIdempleado(int idempleado){
+    public void setIdempleado(long idempleado){
         this.idempleado = idempleado;
     }
 
+    @Override
+    public String toString() {
+        return "HspersonalVO{" + "idmovimientofilial=" + idmovimientofilial + ", dia=" + dia + ", mes=" + mes + ", anio=" + anio + ", idfilial=" + idfilial + ", horastrabajadas=" + horastrabajadas + ", horasextras=" + horasextras + ", comentarios=" + comentarios + ", dni=" + dni + ", idempleado=" + idempleado + '}';
+    }
 }

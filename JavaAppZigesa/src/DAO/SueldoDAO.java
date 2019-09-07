@@ -12,7 +12,7 @@ public class SueldoDAO{
     public ArrayList<SueldoVO> Listar_SueldoVO(){
         ArrayList<SueldoVO> list = new ArrayList<SueldoVO>();
         Conectar conec = new Conectar();
-        String sql = "SELECT * FROM tabla;";
+        String sql = "SELECT * FROM sueldo;";
         ResultSet rs = null;
         PreparedStatement ps = null;
         try{
@@ -20,12 +20,12 @@ public class SueldoDAO{
             rs = ps.executeQuery();
             while(rs.next()){
                 SueldoVO vo = new SueldoVO();
-                vo.setIdsueldo(rs.getInt(1));
-                vo.setDni(rs.getInt(2));
-                vo.setIdempleado(rs.getInt(3));
+                vo.setIdsueldo(rs.getLong(1));
+                vo.setDni(rs.getLong(2));
+                vo.setIdempleado(rs.getLong(3));
                 vo.setMes(rs.getInt(4));
                 vo.setAnio(rs.getInt(5));
-                vo.setIdretcon(rs.getInt(6));
+                vo.setIdretcon(rs.getLong(6));
                 vo.setCategoria(rs.getString(7));
                 vo.setSueldobase(rs.getDouble(8));
                 vo.setMontosindicato(rs.getDouble(9));
@@ -55,16 +55,16 @@ public class SueldoDAO{
 /*Metodo agregar*/
     public void Agregar_SueldoVO(SueldoVO vo){
         Conectar conec = new Conectar();
-        String sql = "INSERT INTO tabla (campo1, campo2) VALUES(?,?);";
+        String sql = "INSERT INTO sueldo (campo1, campo2) VALUES(?,?);";
         PreparedStatement ps = null;
         try{
             ps = conec.getConnection().prepareStatement(sql);
-            ps.setInt(1, vo.getIdsueldo());
-            ps.setInt(2, vo.getDni());
-            ps.setInt(3, vo.getIdempleado());
+            ps.setLong(1, vo.getIdsueldo());
+            ps.setLong(2, vo.getDni());
+            ps.setLong(3, vo.getIdempleado());
             ps.setInt(4, vo.getMes());
             ps.setInt(5, vo.getAnio());
-            ps.setInt(6, vo.getIdretcon());
+            ps.setLong(6, vo.getIdretcon());
             ps.setString(7, vo.getCategoria());
             ps.setDouble(8, vo.getSueldobase());
             ps.setDouble(9, vo.getMontosindicato());
@@ -91,16 +91,16 @@ public class SueldoDAO{
 /*Metodo Modificar*/
     public void Modificar_SueldoVO(SueldoVO vo){
         Conectar conec = new Conectar();
-        String sql = "UPDATE tabla SET campo2 = ? WHERE campo1 = ?;";
+        String sql = "UPDATE sueldo SET campo2 = ? WHERE campo1 = ?;";
         PreparedStatement ps = null;
         try{
             ps = conec.getConnection().prepareStatement(sql);
-            ps.setInt(1, vo.getIdsueldo());
-            ps.setInt(2, vo.getDni());
-            ps.setInt(3, vo.getIdempleado());
+            ps.setLong(1, vo.getIdsueldo());
+            ps.setLong(2, vo.getDni());
+            ps.setLong(3, vo.getIdempleado());
             ps.setInt(4, vo.getMes());
             ps.setInt(5, vo.getAnio());
-            ps.setInt(6, vo.getIdretcon());
+            ps.setLong(6, vo.getIdretcon());
             ps.setString(7, vo.getCategoria());
             ps.setDouble(8, vo.getSueldobase());
             ps.setDouble(9, vo.getMontosindicato());
@@ -127,16 +127,16 @@ public class SueldoDAO{
 /*Metodo Eliminar*/
     public void Eliminar_SueldoVO(SueldoVO vo){
         Conectar conec = new Conectar();
-        String sql = "DELETE FROM tabla WHERE campo1 = ?;";
+        String sql = "DELETE FROM sueldo WHERE campo1 = ?;";
         PreparedStatement ps = null;
         try{
             ps = conec.getConnection().prepareStatement(sql);
-            ps.setInt(1, vo.getIdsueldo());
-            ps.setInt(2, vo.getDni());
-            ps.setInt(3, vo.getIdempleado());
+            ps.setLong(1, vo.getIdsueldo());
+            ps.setLong(2, vo.getDni());
+            ps.setLong(3, vo.getIdempleado());
             ps.setInt(4, vo.getMes());
             ps.setInt(5, vo.getAnio());
-            ps.setInt(6, vo.getIdretcon());
+            ps.setLong(6, vo.getIdretcon());
             ps.setString(7, vo.getCategoria());
             ps.setDouble(8, vo.getSueldobase());
             ps.setDouble(9, vo.getMontosindicato());

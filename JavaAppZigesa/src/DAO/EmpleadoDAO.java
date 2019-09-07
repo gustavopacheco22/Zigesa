@@ -20,8 +20,8 @@ public class EmpleadoDAO{
             rs = ps.executeQuery();
             while(rs.next()){
                 EmpleadoVO vo = new EmpleadoVO();
-                vo.setIdempleado(rs.getInt(1));
-                vo.setDni(rs.getInt(2));
+                vo.setIdempleado(rs.getLong(1));
+                vo.setDni(rs.getLong(2));
                 vo.setNombre(rs.getString(3));
                 vo.setApellido(rs.getString(4));
                 vo.setTelefono(rs.getInt(5));
@@ -55,8 +55,8 @@ public class EmpleadoDAO{
         PreparedStatement ps = null;
         try{
             ps = conec.getConnection().prepareStatement(sql);
-            ps.setInt(1, vo.getIdempleado());
-            ps.setInt(2, vo.getDni());
+            ps.setLong(1, vo.getIdempleado());
+            ps.setLong(2, vo.getDni());
             ps.setString(3, vo.getNombre());
             ps.setString(4, vo.getApellido());
             ps.setInt(5, vo.getTelefono());
@@ -88,8 +88,8 @@ public class EmpleadoDAO{
         PreparedStatement ps = null;
         try{
             ps = conec.getConnection().prepareStatement(sql);
-            ps.setInt(1, vo.getIdempleado());
-            ps.setInt(2, vo.getDni());
+            ps.setLong(1, vo.getIdempleado());
+            ps.setLong(2, vo.getDni());
             ps.setString(3, vo.getNombre());
             ps.setString(4, vo.getApellido());
             ps.setInt(5, vo.getTelefono());
@@ -120,8 +120,8 @@ public class EmpleadoDAO{
         PreparedStatement ps = null;
         try{
             ps = conec.getConnection().prepareStatement(sql);
-            ps.setInt(1, vo.getIdempleado());
-            ps.setInt(2, vo.getDni());
+            ps.setLong(1, vo.getIdempleado());
+            ps.setLong(2, vo.getDni());
             ps.setString(3, vo.getNombre());
             ps.setString(4, vo.getApellido());
             ps.setInt(5, vo.getTelefono());

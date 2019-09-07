@@ -3,13 +3,19 @@ package VO;
 public class CategoriaVO {
 
 /*Todo los atributos*/
-    int idcategoria;
-    double montoacobrar;
+   private Long idcategoria;
+   private double montoacobrar;
 
-public CategoriaVO(){}
+    public CategoriaVO(){}
+
+    public CategoriaVO(Long idcategoria, double montoacobrar) {
+        this.idcategoria = idcategoria;
+        this.montoacobrar = montoacobrar;
+    }
+
 
 /*Todo los codigos get*/
-    public int getIdcategoria(){
+    public Long getIdcategoria(){
         return idcategoria;
     }
     public double getMontoacobrar(){
@@ -18,11 +24,18 @@ public CategoriaVO(){}
 
 
 /*Todo los codigos set*/
-    public void setIdcategoria(int idcategoria){
+    public void setIdcategoria(Long idcategoria){
         this.idcategoria = idcategoria;
     }
     public void setMontoacobrar(double montoacobrar){
         this.montoacobrar = montoacobrar;
     }
+
+    @Override
+    public String toString() {
+        return "CategoriaVO{" + "idcategoria=" + idcategoria + ", montoacobrar=" + montoacobrar + '}';
+    }
+    
+    
 
 }

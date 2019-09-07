@@ -20,14 +20,14 @@ public class InformeDAO{
             rs = ps.executeQuery();
             while(rs.next()){
                 InformeVO vo = new InformeVO();
-                vo.setNroinforme(rs.getInt(1));
+                vo.setNroinforme(rs.getLong(1));
                 vo.setDia(rs.getInt(2));
                 vo.setMes(rs.getInt(3));
                 vo.setAnio(rs.getInt(4));
                 vo.setDescripcioninforme(rs.getString(5));
                 vo.setComentarioinforme(rs.getString(6));
-                vo.setDni(rs.getInt(7));
-                vo.setIdempleado(rs.getInt(8));
+                vo.setDni(rs.getLong(7));
+                vo.setIdempleado(rs.getLong(8));
                 list.add(vo);
             }
         }catch(SQLException ex){
@@ -52,14 +52,14 @@ public class InformeDAO{
         PreparedStatement ps = null;
         try{
             ps = conec.getConnection().prepareStatement(sql);
-            ps.setInt(1, vo.getNroinforme());
+            ps.setLong(1, vo.getNroinforme());
             ps.setInt(2, vo.getDia());
             ps.setInt(3, vo.getMes());
             ps.setInt(4, vo.getAnio());
             ps.setString(5, vo.getDescripcioninforme());
             ps.setString(6, vo.getComentarioinforme());
-            ps.setInt(7, vo.getDni());
-            ps.setInt(8, vo.getIdempleado());
+            ps.setLong(7, vo.getDni());
+            ps.setLong(8, vo.getIdempleado());
             ps.executeUpdate();
         }catch(SQLException ex){
             System.out.println(ex.getMessage());
@@ -81,14 +81,14 @@ public class InformeDAO{
         PreparedStatement ps = null;
         try{
             ps = conec.getConnection().prepareStatement(sql);
-            ps.setInt(1, vo.getNroinforme());
+            ps.setLong(1, vo.getNroinforme());
             ps.setInt(2, vo.getDia());
             ps.setInt(3, vo.getMes());
             ps.setInt(4, vo.getAnio());
             ps.setString(5, vo.getDescripcioninforme());
             ps.setString(6, vo.getComentarioinforme());
-            ps.setInt(7, vo.getDni());
-            ps.setInt(8, vo.getIdempleado());
+            ps.setLong(7, vo.getDni());
+            ps.setLong(8, vo.getIdempleado());
             ps.executeUpdate();
         }catch(SQLException ex){
             System.out.println(ex.getMessage());
@@ -110,14 +110,14 @@ public class InformeDAO{
         PreparedStatement ps = null;
         try{
             ps = conec.getConnection().prepareStatement(sql);
-            ps.setInt(1, vo.getNroinforme());
+            ps.setLong(1, vo.getNroinforme());
             ps.setInt(2, vo.getDia());
             ps.setInt(3, vo.getMes());
             ps.setInt(4, vo.getAnio());
             ps.setString(5, vo.getDescripcioninforme());
             ps.setString(6, vo.getComentarioinforme());
-            ps.setInt(7, vo.getDni());
-            ps.setInt(8, vo.getIdempleado());
+            ps.setLong(7, vo.getDni());
+            ps.setLong(8, vo.getIdempleado());
             ps.executeUpdate();
         }catch(SQLException ex){
             System.out.println(ex.getMessage());

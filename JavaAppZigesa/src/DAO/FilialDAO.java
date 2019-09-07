@@ -20,7 +20,7 @@ public class FilialDAO{
             rs = ps.executeQuery();
             while(rs.next()){
                 FilialVO vo = new FilialVO();
-                vo.setIdfilial(rs.getInt(1));
+                vo.setIdfilial(rs.getLong(1));
                 vo.setNombrefilial(rs.getString(2));
                 vo.setUbicacionfilial(rs.getString(3));
                 list.add(vo);
@@ -47,7 +47,7 @@ public class FilialDAO{
         PreparedStatement ps = null;
         try{
             ps = conec.getConnection().prepareStatement(sql);
-            ps.setInt(1, vo.getIdfilial());
+            ps.setLong(1, vo.getIdfilial());
             ps.setString(2, vo.getNombrefilial());
             ps.setString(3, vo.getUbicacionfilial());
             ps.executeUpdate();
@@ -71,7 +71,7 @@ public class FilialDAO{
         PreparedStatement ps = null;
         try{
             ps = conec.getConnection().prepareStatement(sql);
-            ps.setInt(1, vo.getIdfilial());
+            ps.setLong(1, vo.getIdfilial());
             ps.setString(2, vo.getNombrefilial());
             ps.setString(3, vo.getUbicacionfilial());
             ps.executeUpdate();
@@ -95,7 +95,7 @@ public class FilialDAO{
         PreparedStatement ps = null;
         try{
             ps = conec.getConnection().prepareStatement(sql);
-            ps.setInt(1, vo.getIdfilial());
+            ps.setLong(1, vo.getIdfilial());
             ps.setString(2, vo.getNombrefilial());
             ps.setString(3, vo.getUbicacionfilial());
             ps.executeUpdate();

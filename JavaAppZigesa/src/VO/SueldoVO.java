@@ -3,32 +3,52 @@ package VO;
 public class SueldoVO {
 
 /*Todo los atributos*/
-    int idsueldo;
-    int dni;
-    int idempleado;
-    int mes;
-    int anio;
-    int idretcon;
-    String categoria;
-    double sueldobase;
-    double montosindicato;
-    double montohsex;
-    double montojubilacion;
-    double montoobrasocial;
-    double montodeaporteju;
-    double montodeaporteobsoc;
-    double netocobrar;
+    private Long idsueldo;
+    private long dni;
+    private long idempleado;
+    private int mes;
+    private int anio;
+    private long idretcon;
+    private String categoria;
+    private double sueldobase;
+    private double montosindicato;
+    private double montohsex;
+    private double montojubilacion;
+    private double montoobrasocial;
+    private double montodeaporteju;
+    private double montodeaporteobsoc;
+    private double netocobrar;
 
 public SueldoVO(){}
 
+    public SueldoVO(Long idsueldo, long dni, long idempleado, int mes, int anio, long idretcon, String categoria, double sueldobase, double montosindicato, double montohsex, double montojubilacion, double montoobrasocial, double montodeaporteju, double montodeaporteobsoc, double netocobrar) {
+        this.idsueldo = idsueldo;
+        this.dni = dni;
+        this.idempleado = idempleado;
+        this.mes = mes;
+        this.anio = anio;
+        this.idretcon = idretcon;
+        this.categoria = categoria;
+        this.sueldobase = sueldobase;
+        this.montosindicato = montosindicato;
+        this.montohsex = montohsex;
+        this.montojubilacion = montojubilacion;
+        this.montoobrasocial = montoobrasocial;
+        this.montodeaporteju = montodeaporteju;
+        this.montodeaporteobsoc = montodeaporteobsoc;
+        this.netocobrar = netocobrar;
+    }
+
+    
+
 /*Todo los codigos get*/
-    public int getIdsueldo(){
+    public Long getIdsueldo(){
         return idsueldo;
     }
-    public int getDni(){
+    public long getDni(){
         return dni;
     }
-    public int getIdempleado(){
+    public long getIdempleado(){
         return idempleado;
     }
     public int getMes(){
@@ -37,7 +57,7 @@ public SueldoVO(){}
     public int getAnio(){
         return anio;
     }
-    public int getIdretcon(){
+    public long getIdretcon(){
         return idretcon;
     }
     public String getCategoria(){
@@ -70,13 +90,13 @@ public SueldoVO(){}
 
 
 /*Todo los codigos set*/
-    public void setIdsueldo(int idsueldo){
+    public void setIdsueldo(Long idsueldo){
         this.idsueldo = idsueldo;
     }
-    public void setDni(int dni){
+    public void setDni(long dni){
         this.dni = dni;
     }
-    public void setIdempleado(int idempleado){
+    public void setIdempleado(long idempleado){
         this.idempleado = idempleado;
     }
     public void setMes(int mes){
@@ -85,7 +105,7 @@ public SueldoVO(){}
     public void setAnio(int anio){
         this.anio = anio;
     }
-    public void setIdretcon(int idretcon){
+    public void setIdretcon(long idretcon){
         this.idretcon = idretcon;
     }
     public void setCategoria(String categoria){
@@ -116,4 +136,8 @@ public SueldoVO(){}
         this.netocobrar = netocobrar;
     }
 
+    @Override
+    public String toString() {
+        return "SueldoVO{" + "idsueldo=" + idsueldo + ", dni=" + dni + ", idempleado=" + idempleado + ", mes=" + mes + ", anio=" + anio + ", idretcon=" + idretcon + ", categoria=" + categoria + ", sueldobase=" + sueldobase + ", montosindicato=" + montosindicato + ", montohsex=" + montohsex + ", montojubilacion=" + montojubilacion + ", montoobrasocial=" + montoobrasocial + ", montodeaporteju=" + montodeaporteju + ", montodeaporteobsoc=" + montodeaporteobsoc + ", netocobrar=" + netocobrar + '}';
+    }
 }

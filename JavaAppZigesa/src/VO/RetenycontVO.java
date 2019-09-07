@@ -5,18 +5,28 @@ import java.sql.Date;
 public class RetenycontVO {
 
 /*Todo los atributos*/
-    int idretcon;
-    double porcapjub;
-    double porcobsoc;
-    double porsind;
-    double porapjubpat;
-    double porobsocpat;
-    Date fechavigente;
+    private Long idretcon;
+    private double porcapjub;
+    private double porcobsoc;
+    private double porsind;
+    private double porapjubpat;
+    private double porobsocpat;
+    private Date fechavigente;
 
-public RetenycontVO(){}
+    public RetenycontVO(){}
+
+    public RetenycontVO(Long idretcon, double porcapjub, double porcobsoc, double porsind, double porapjubpat, double porobsocpat, Date fechavigente) {
+        this.idretcon = idretcon;
+        this.porcapjub = porcapjub;
+        this.porcobsoc = porcobsoc;
+        this.porsind = porsind;
+        this.porapjubpat = porapjubpat;
+        this.porobsocpat = porobsocpat;
+        this.fechavigente = fechavigente;
+    }
 
 /*Todo los codigos get*/
-    public int getIdretcon(){
+    public Long getIdretcon(){
         return idretcon;
     }
     public double getPorcapjub(){
@@ -40,7 +50,7 @@ public RetenycontVO(){}
 
 
 /*Todo los codigos set*/
-    public void setIdretcon(int idretcon){
+    public void setIdretcon(Long idretcon){
         this.idretcon = idretcon;
     }
     public void setPorcapjub(int porcapjub){
@@ -62,4 +72,8 @@ public RetenycontVO(){}
         this.fechavigente = fechavigente;
     }
 
+    @Override
+    public String toString() {
+        return "RetenycontVO{" + "idretcon=" + idretcon + ", porcapjub=" + porcapjub + ", porcobsoc=" + porcobsoc + ", porsind=" + porsind + ", porapjubpat=" + porapjubpat + ", porobsocpat=" + porobsocpat + ", fechavigente=" + fechavigente + '}';
+    }
 }

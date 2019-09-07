@@ -3,19 +3,30 @@ package VO;
 public class InformeVO {
 
 /*Todo los atributos*/
-    int nroinforme;
-    int dia;
-    int mes;
-    int anio;
-    String descripcioninforme;
-    String comentarioinforme;
-    int dni;
-    int idempleado;
+    private Long nroinforme;
+    private int dia;
+    private int mes;
+    private int anio;
+    private String descripcioninforme;
+    private String comentarioinforme;
+    private long dni;
+    private long idempleado;
 
 public InformeVO(){}
 
+    public InformeVO(Long nroinforme, int dia, int mes, int anio, String descripcioninforme, String comentarioinforme, long dni, long idempleado) {
+        this.nroinforme = nroinforme;
+        this.dia = dia;
+        this.mes = mes;
+        this.anio = anio;
+        this.descripcioninforme = descripcioninforme;
+        this.comentarioinforme = comentarioinforme;
+        this.dni = dni;
+        this.idempleado = idempleado;
+    }
+
 /*Todo los codigos get*/
-    public int getNroinforme(){
+    public Long getNroinforme(){
         return nroinforme;
     }
     public int getDia(){
@@ -33,16 +44,16 @@ public InformeVO(){}
     public String getComentarioinforme(){
         return comentarioinforme;
     }
-    public int getDni(){
+    public long getDni(){
         return dni;
     }
-    public int getIdempleado(){
+    public long getIdempleado(){
         return idempleado;
     }
 
 
 /*Todo los codigos set*/
-    public void setNroinforme(int nroinforme){
+    public void setNroinforme(Long nroinforme){
         this.nroinforme = nroinforme;
     }
     public void setDia(int dia){
@@ -60,11 +71,15 @@ public InformeVO(){}
     public void setComentarioinforme(String comentarioinforme){
         this.comentarioinforme = comentarioinforme;
     }
-    public void setDni(int dni){
+    public void setDni(long dni){
         this.dni = dni;
     }
-    public void setIdempleado(int idempleado){
+    public void setIdempleado(long idempleado){
         this.idempleado = idempleado;
     }
 
+    @Override
+    public String toString() {
+        return "InformeVO{" + "nroinforme=" + nroinforme + ", dia=" + dia + ", mes=" + mes + ", anio=" + anio + ", descripcioninforme=" + descripcioninforme + ", comentarioinforme=" + comentarioinforme + ", dni=" + dni + ", idempleado=" + idempleado + '}';
+    }
 }
