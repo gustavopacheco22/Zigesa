@@ -19,19 +19,21 @@ public class Conectar{
         }
         
         //devolver datos
+        //STATEMENT ACCEDER A LA BASE DE DATOS Y EJECUTAR CODIGO SQL 
         Statement estado = connection.createStatement();
-        ResultSet resultado = estado.executeQuery("Select * from empleado");
+        //EJECUTAR CONSULTA SQL CON EXECUTEQUERY
+        ResultSet set = estado.executeQuery("Select * from empleado");
         
-            System.out.println("idEmpleado: \t DNi: \t \t nombre \t apellido");
-            while(resultado.next()){
-                System.out.println(resultado.getInt("idEmpleado") + "\t\t" + resultado.getInt("DNI") + "\t" + resultado.getString("nombre") + "\t\t"  + resultado.getString("apellido"));
-//                System.out.println("\t");
-//                System.out.println(resultado.getInt("DNI"));
-//                System.out.println("\t");
-//                System.out.println(resultado.getString("nombre"));
-//                System.out.println("\t");
-//                System.out.println(resultado.getString("apellido"));
+            
+            while(set.next()){
+                int idEmpleado = set.getInt("idEmpleado");
+                int Dni = set.getInt("DNI");
+                String nombre = set.getString("nombre");
+                String apellido = set.getString("apellido");
+                System.out.println("Empleado " + idEmpleado + "."+ "DNI: " + Dni +"  "+ "Nombre: "  + nombre + " " +apellido);
             }
+            set.close();
+            estado.close();
                 
         }catch(SQLException ex){
             System.out.println("Eror sql" + ex.getMessage());

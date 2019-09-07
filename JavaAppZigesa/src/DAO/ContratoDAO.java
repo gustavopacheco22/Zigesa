@@ -25,11 +25,9 @@ public class ContratoDAO{
                 vo.setFechavencimiento(rs.getDate(3));
                 vo.setCategoria(rs.getString(4));
                 vo.setMontoxcategoria(rs.getDouble(5));
-                vo.setNombre(rs.getString(6));
-                vo.setApellido(rs.getString(7));
-                vo.setDni(rs.getInt(8));
-                vo.setIdempleado(rs.getInt(9));
-                vo.setIdcategoria(rs.getInt(10));
+                vo.setDni(rs.getInt(6));
+                vo.setIdempleado(rs.getInt(7));
+                vo.setIdcategoria(rs.getInt(8));
                 list.add(vo);
             }
         }catch(SQLException ex){
@@ -59,11 +57,9 @@ public class ContratoDAO{
             ps.setObject(3, vo.getFechavencimiento());
             ps.setString(4, vo.getCategoria());
             ps.setDouble(5, vo.getMontoxcategoria());
-            ps.setString(6, vo.getNombre());
-            ps.setString(7, vo.getApellido());
-            ps.setInt(8, vo.getDni());
-            ps.setInt(9, vo.getIdempleado());
-            ps.setInt(10, vo.getIdcategoria());
+            ps.setInt(6, vo.getDni());
+            ps.setInt(7, vo.getIdempleado());
+            ps.setInt(8, vo.getIdcategoria());
             ps.executeUpdate();
         }catch(SQLException ex){
             System.out.println(ex.getMessage());
@@ -90,11 +86,9 @@ public class ContratoDAO{
             ps.setObject(3, vo.getFechavencimiento());
             ps.setString(4, vo.getCategoria());
             ps.setDouble(5, vo.getMontoxcategoria());
-            ps.setString(6, vo.getNombre());
-            ps.setString(7, vo.getApellido());
-            ps.setInt(8, vo.getDni());
-            ps.setInt(9, vo.getIdempleado());
-            ps.setInt(10, vo.getIdcategoria());
+            ps.setInt(6, vo.getDni());
+            ps.setInt(7, vo.getIdempleado());
+            ps.setInt(8, vo.getIdcategoria());
             ps.executeUpdate();
         }catch(SQLException ex){
             System.out.println(ex.getMessage());
@@ -121,11 +115,9 @@ public class ContratoDAO{
             ps.setObject(3, vo.getFechavencimiento());
             ps.setString(4, vo.getCategoria());
             ps.setDouble(5, vo.getMontoxcategoria());
-            ps.setString(6, vo.getNombre());
-            ps.setString(7, vo.getApellido());
-            ps.setInt(8, vo.getDni());
-            ps.setInt(9, vo.getIdempleado());
-            ps.setInt(10, vo.getIdcategoria());
+            ps.setInt(6, vo.getDni());
+            ps.setInt(7, vo.getIdempleado());
+            ps.setInt(8, vo.getIdcategoria());
             ps.executeUpdate();
         }catch(SQLException ex){
             System.out.println(ex.getMessage());

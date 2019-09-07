@@ -10,8 +10,6 @@ public class ContratoVO {
     Date fechavencimiento;
     String categoria;
     double montoxcategoria;
-    String nombre;
-    String apellido;
     int dni;
     int idempleado;
     int idcategoria;
@@ -33,12 +31,6 @@ public ContratoVO(){}
     }
     public double getMontoxcategoria(){
         return montoxcategoria;
-    }
-    public String getNombre(){
-        return nombre;
-    }
-    public String getApellido(){
-        return apellido;
     }
     public int getDni(){
         return dni;
@@ -66,12 +58,6 @@ public ContratoVO(){}
     }
     public void setMontoxcategoria(double montoxcategoria){
         this.montoxcategoria = montoxcategoria;
-    }
-    public void setNombre(String nombre){
-        this.nombre = nombre;
-    }
-    public void setApellido(String apellido){
-        this.apellido = apellido;
     }
     public void setDni(int dni){
         this.dni = dni;

@@ -19,8 +19,6 @@ public class Tabla_ContratoVO{
         dt.addColumn("fechavencimiento");
         dt.addColumn("categoria");
         dt.addColumn("montoxcategoria");
-        dt.addColumn("nombre");
-        dt.addColumn("apellido");
         dt.addColumn("dni");
         dt.addColumn("idempleado");
         dt.addColumn("idcategoria");
@@ -38,11 +36,9 @@ public class Tabla_ContratoVO{
                 fila[2] = vo.getFechavencimiento();
                 fila[3] = vo.getCategoria();
                 fila[4] = vo.getMontoxcategoria();
-                fila[5] = vo.getNombre();
-                fila[6] = vo.getApellido();
-                fila[7] = vo.getDni();
-                fila[8] = vo.getIdempleado();
-                fila[9] = vo.getIdcategoria();
+                fila[5] = vo.getDni();
+                fila[6] = vo.getIdempleado();
+                fila[7] = vo.getIdcategoria();
                 dt.addRow(fila);
             }
             tabla.setModel(dt);
